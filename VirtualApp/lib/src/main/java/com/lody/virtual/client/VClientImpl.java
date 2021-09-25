@@ -437,7 +437,7 @@ public final class VClientImpl extends IVClient.Stub {
                 ThreadGroupN.groups.set(newRoot, newGroups);
                 ThreadGroupN.groups.set(root, new ThreadGroup[]{newRoot});
                 for (Object group : newGroups) {
-                    if (group == newRoot) {
+                    if (group == newRoot || group == null) {
                         continue;
                     }
                     ThreadGroupN.parent.set(group, newRoot);

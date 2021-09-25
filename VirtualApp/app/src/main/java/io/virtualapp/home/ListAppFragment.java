@@ -151,10 +151,10 @@ public class ListAppFragment extends VFragment<ListAppContract.ListAppPresenter>
         mAdapter.setOnItemClickListener(new CloneAppListAdapter.ItemEventListener() {
             @Override
             public void onItemClick(AppInfo info, int position) {
-                if (!NativeLibraryHelperCompat.isApk64(info.path)) {
-                    Toast.makeText(getContext(), R.string.unsupported_for_32bit_app, Toast.LENGTH_SHORT).show();
-                    return;
-                }
+//                if (!NativeLibraryHelperCompat.isApk64(info.path)) {
+//                    Toast.makeText(getContext(), R.string.unsupported_for_32bit_app, Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
                 int count = mAdapter.getSelectedCount();
                 if (!mAdapter.isIndexSelected(position)) {
                     if (count >= 9) {
