@@ -44,9 +44,11 @@ dependencies {
         exclude group: 'me.weishu', module: 'epic'
         exclude group: 'me.weishu.exposed', module: 'exposed-xposedapi'
     }
-    implementation "me.weishu:free_reflection:3.0.1"
-    implementation "me.weishu:epic:0.11.1"
+//    implementation "me.weishu:free_reflection:3.0.1"
+    implementation 'com.github.tiann:epic:0.11.2'
     implementation "me.weishu.exposed:exposed-xposedapi:0.4.6"
+//    api "me.weishu.exposed:exposed-core:0.8.1"
+//    implementation "me.weishu:free_reflection:2.2.0"
 }
 
 repositories {
