@@ -125,6 +125,7 @@ __BEGIN_DECLS
 
 
 // int fstatat64(int dirfd, const char *pathname, struct stat *buf, int flags);
+/*
 HOOK_DEF(int, fstatat64, int dirfd, const char *pathname, struct stat *buf, int flags) {
     int res;
     const char *redirect_path = relocate_path(pathname, &res);
@@ -132,7 +133,7 @@ HOOK_DEF(int, fstatat64, int dirfd, const char *pathname, struct stat *buf, int 
     FREE(redirect_path, pathname);
     return ret;
 }
-
+*/
 
 // int mknodat(int dirfd, const char *pathname, mode_t mode, dev_t dev);
 HOOK_DEF(int, mknodat, int dirfd, const char *pathname, mode_t mode, dev_t dev) {
@@ -518,7 +519,7 @@ void IOUniformer::startUniformer(const char *so_path, int api_level, int preview
     if (handle) {
         HOOK_SYMBOL(handle, fchownat);
         HOOK_SYMBOL(handle, renameat);
-        HOOK_SYMBOL(handle, fstatat64);
+        //HOOK_SYMBOL(handle, fstatat64);
         HOOK_SYMBOL(handle, __statfs);
         HOOK_SYMBOL(handle, mkdirat);
         HOOK_SYMBOL(handle, mknodat);
