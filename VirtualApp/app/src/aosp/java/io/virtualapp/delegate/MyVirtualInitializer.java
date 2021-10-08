@@ -3,6 +3,7 @@ package io.virtualapp.delegate;
 import android.app.Application;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 
 import com.lody.virtual.client.core.VirtualCore;
 import com.microsoft.appcenter.AppCenter;
@@ -29,7 +30,7 @@ public class MyVirtualInitializer extends BaseVirtualInitializer {
 
     @Override
     public void onVirtualProcess() {
-        List<PackageInfo> packageInfos =  VirtualCore.get().getUnHookPackageManager().getInstalledPackages(0);
+        List<PackageInfo> packageInfos =  VirtualCore.get().getUnHookPackageManager().getInstalledPackages(PackageManager.GET_META_DATA);
         if (packageInfos != null) {
             for (int i = 0; i < packageInfos.size(); i++) {
                 PackageInfo info = packageInfos.get(i);
